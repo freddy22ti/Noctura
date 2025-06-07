@@ -1,8 +1,10 @@
-package com.uhuy.noctura.ui.view.home.home
+package com.uhuy.noctura.ui.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,36 +21,35 @@ class ArtikelListAdapter(
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // Inflate the binding
-        val binding = HomeArtikelItemBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+        val binding = HomeArtikelItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-
-        // Use the binding to set data
         holder.binding.tvTitle.text = item.title
+
+        // Using Picasso for image loading
         Picasso.get()
             .load(item.urlToImage)
-            .resize(512, 0)
+            .resize(512, 0) // Adjust the image size as needed
+            .centerCrop()
             .into(holder.binding.ivGambar)
 
         holder.binding.btnNavigasi.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(item.url))
             context.startActivity(browserIntent)
         }
-
     }
 
     override fun getItemCount() = items.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateData(newArticles: List<News>) {
-        items = newArticles
+        // Filter out articles with null or empty image URLs
+        items = newArticles.filter { !it.urlToImage.isNullOrEmpty() }
+
+        // Notify the adapter that the data has changed
         notifyDataSetChanged()
     }
 }

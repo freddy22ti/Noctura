@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.view.home.home.HomeFragment">
+    tools:context=".ui.view.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -55,6 +55,38 @@
 
         </LinearLayout>
 
+        <!-- Prediksi Terakhir -->
+        <LinearLayout
+            android:id="@+id/layout_prediksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_slider">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:text="Kualitas Tidur Terakhir"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_hasil_prediksi"
+                android:layout_width="wrap_content"
+                android:textStyle="italic|bold"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
         <!-- Artikel Terbaru -->
         <TextView
             android:id="@+id/tv_title_artikel"
@@ -65,23 +97,42 @@
             android:text="Artikel Terbaru"
             android:textColor="@color/white"
             android:textSize="24sp"
-            tools:ignore="HardcodedText"
-            app:layout_constraintTop_toBottomOf="@+id/layout_slider"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/layout_prediksi"
+            tools:ignore="HardcodedText" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_artikel_terbaru"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/home_artikel_item"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_artikel"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_artikel">
+
+            <include
+                android:id="@+id/item_loading"
+                layout="@layout/item_loading" />
+
+            <include
+                android:id="@+id/item_error"
+                layout="@layout/item_error" />
+
+            <include
+                android:id="@+id/item_empty"
+                layout="@layout/item_empty" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_artikel_terbaru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/home_artikel_item" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

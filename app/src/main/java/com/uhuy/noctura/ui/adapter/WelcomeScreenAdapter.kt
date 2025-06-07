@@ -1,7 +1,8 @@
-package com.uhuy.noctura.ui.view.welcome_screen
+package com.uhuy.noctura.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.uhuy.noctura.ui.view.welcome_screen.WelcomeScreenActivity
 
 class WelcomeScreenAdapter (
     activity: WelcomeScreenActivity,

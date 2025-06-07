@@ -7,10 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.uhuy.noctura.R
 import com.uhuy.noctura.databinding.ActivityMainBinding
-import com.uhuy.noctura.ui.view.home.alarm.AlarmFragment
-import com.uhuy.noctura.ui.view.home.home.HomeFragment
-import com.uhuy.noctura.ui.view.home.settings.SettingsFragment
-import com.uhuy.noctura.ui.view.home.statistic.StatisticFragment
 import com.uhuy.noctura.utils.loadFragment
 
 class MainActivity : AppCompatActivity() {
@@ -50,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 loadFragment(
                     fragment = fragment,
                     containerId = binding.fragmentContainer.id,
-                    addToBackStack = true
+                    addToBackStack = false
                 )
                 true
             } ?: false
@@ -61,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         loadFragment(
             fragment = HomeFragment(),
             containerId = binding.fragmentContainer.id,
-            addToBackStack = true
+            addToBackStack = false
         )
     }
 }

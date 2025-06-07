@@ -14,6 +14,25 @@
     <string name="deskripsi_redirect_to_register">Belum Punya Akun?</string>
 
     <string name="error_empty_input">Tidak boleh ada data kosong</string>
+    <string name="error_auth_empty_input">Silahkan isi email dan password</string>
+    <string name="error_auth">Email atau password salah</string>
+
+    <string name="error_invalid_email">Silahkan gunakan email yang valid</string>
+
+    <string name="jumlah_konsumsi_alkohol_ml">Jumlah Konsumsi Alkohol (ML)</string>
+    <string name="jumlah_konsumsi_kafein_ml">Jumlah Konsumsi Kafein (ML)</string>
+    <string name="pilih_jam_tidur">Pilih Jam Tidur</string>
+    <string name="pilih_jam_bangun">Pilih Jam Bangun</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="title_bottom_sheet_layout">Informasi Tidur</string>
+
+    <string name="no_articles">Belum ada artikel terbaru</string>
+    <string name="error_empty_username">Username tidak boleh kosong</string>
+    <string name="error_empty_email">Email tidak boleh kosong</string>
+    <string name="error_empty_password">Password tidak boleh kosong</string>
+    <string name="error_password_length">Password minimal harus 6 digit</string>
+    <string name="jenis_kelamin_text">Jenis Kelamin</string>
+    <string name="text_umur">Umur</string>
 
 
 </resources>

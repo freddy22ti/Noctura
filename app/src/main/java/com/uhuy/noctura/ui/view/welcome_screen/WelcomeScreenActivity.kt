@@ -3,17 +3,14 @@ package com.uhuy.noctura.ui.view.welcome_screen
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.uhuy.noctura.R
-import com.uhuy.noctura.databinding.ActivityAuthBinding
 import com.uhuy.noctura.databinding.ActivityWelcomeScreenBinding
+import com.uhuy.noctura.ui.adapter.WelcomeScreenAdapter
 import com.uhuy.noctura.ui.view.auth.AuthActivity
 
 class WelcomeScreenActivity : AppCompatActivity() {
@@ -35,7 +32,7 @@ class WelcomeScreenActivity : AppCompatActivity() {
     private fun setupWindowInsets() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
     }

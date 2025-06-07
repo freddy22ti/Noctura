@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "395983809017",
+    "project_id": "noctura-51ea2",
+    "storage_bucket": "noctura-51ea2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395983809017:android:27bacd8cd43bbc620ef528",
+        "android_client_info": {
+          "package_name": "com.uhuy.noctura"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhPvNIaYGLE6KZD-IbpVOeWG-0H1MhDb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

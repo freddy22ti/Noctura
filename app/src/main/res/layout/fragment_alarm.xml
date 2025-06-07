@@ -1,73 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.home.alarm.AlarmFragment">
+    tools:context=".ui.view.home.AlarmFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingHorizontal="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/comfortaa"
-            android:text="Selamat Datang!"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            tools:ignore="HardcodedText" />
-
-        <DigitalClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:textColor="@color/white"
-            android:textSize="40sp" />
-
-        <ImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="220dp"
-            android:layout_height="200dp"
-            android:layout_marginVertical="24dp"
-            android:contentDescription="Logo"
-            app:srcCompat="@drawable/logo"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/btn_set_waktu_bagun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/lavender"
-            android:padding="10dp"
-            android:paddingHorizontal="20dp"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:cornerRadius="16dp" />
-
-        <Button
-            android:id="@+id/btn_mulai_alarm"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="54dp"
-            android:backgroundTint="@color/lavender"
-            android:text="Mulai Alarm"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:cornerRadius="16dp"
-            tools:ignore="HardcodedText" />
-    </LinearLayout>
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:text="Selamat Datang!"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                tools:ignore="HardcodedText" />
+
+            <DigitalClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="220dp"
+                android:layout_height="200dp"
+                android:layout_marginVertical="24dp"
+                android:contentDescription="Logo"
+                app:srcCompat="@drawable/logo"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_set_waktu_bagun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lavender"
+                android:padding="10dp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:cornerRadius="16dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                >
+
+                <Button
+                    android:id="@+id/btn_mulai_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lavender"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:cornerRadius="16dp"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/iv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Cancel"
+                    android:src="@drawable/ic_cancel"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/lavender"
+        android:contentDescription="Add Sleep Data"
+        app:srcCompat="@drawable/ic_add"
+        app:borderWidth="0dp"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
